@@ -1,0 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Kosugi&display=swap&subset=latin-ext,vietnamese');
+
+body {background-image: url("../../assets/img/dark00.jpg");
+      background-color:rgba(255,255,255,0);
+      background-blend-mode:lighten;
+      font-family: 'Inconsolata', monospace;
+      font-family: 'Kosugi', sans-serif;
+}
+
+p { 
+    font-family: 'Inconsolata', monospace;
+    font-family: 'Kosugi', sans-serif; 
+}
