@@ -3,6 +3,7 @@
 
 body {background-image: url("../img/dark00.jpg");
       background-color:rgba(255,255,255,0.3);
+      background-size:cover;
       background-blend-mode:lighten;
       font-family: 'Inconsolata', monospace;
       font-family: 'Kosugi', sans-serif;
@@ -43,7 +44,7 @@ p { color:#ffffff;
 }
 
 #nav li {
-  width: 150px;
+  width: 14%;
   text-align: center;
   background-color: #333;
   float: left;
@@ -226,7 +227,7 @@ p { color:#ffffff;
 
 .box11{
     position: absolute;
-    left: 50px;
+    left: 5%;
     padding: 0.5em 1em;
     margin: 2em 0;
     color: #5d627b;
@@ -234,8 +235,8 @@ p { color:#ffffff;
     border-top: solid 5px #5d627b;
     box-shadow: 0 9px 15px rgba(0, 0, 0, 0.22);
     border-radius: 0.67em;
-    width:555px;
-    height:360px;
+    width:60%;
+    height:80%;
     overflow-y: scroll;
     word-break: break-all;
 }
@@ -251,12 +252,13 @@ p { color:#ffffff;
     color: #000000;
     margin: 0;
     padding: 0;
-    font-size: 30px;
+    font-size: 30%;
     white-space: nowrap;
 }
 
 .box11 h3 {
     color: #000000;
+    text-align: right;
     margin: 0;
     padding: 0;
     font-size: 20px;

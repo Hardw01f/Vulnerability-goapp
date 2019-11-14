@@ -3,6 +3,7 @@
 
 body {background-image: url("../img/dark00.jpg");
       background-color:rgba(255,255,255,0);
+      background-size:cover;
       background-blend-mode:lighten;
       font-family: 'Inconsolata', monospace;
       font-family: 'Kosugi', sans-serif;
@@ -43,7 +44,7 @@ p { color:#ffffff;
 }
 
 #nav li {
-  width: 150px;
+  width: 12%;
   text-align: center;
   background-color: #333;
   float: left;
@@ -102,7 +103,7 @@ p { color:#ffffff;
 	position: relative;
 	margin: 2em auto;
 	width: 100%;
-	height: 340px;
+	height: 90%;
     background: rgba(127,127,127,0.8);
 }
 
