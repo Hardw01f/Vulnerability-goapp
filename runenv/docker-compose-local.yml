@@ -1,0 +1,39 @@
+version: "2"
+services:
+
+  mysql:
+    image: mysql:5.6
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: rootwolf
+        MYSQL_PORT: 3306
+    ports:
+      - 3306:3306
+    volumes:
+      - $PWD/runenv/mysql:/etc/mysql 
+      - $PWD/runenv/mysql-data/init.sql:/docker-entrypoint-initdb.d/grant.sql:rw
+    container_name: vulnapp-mysql
+
+  goapp:
+    image: golang:1.13-alpine3.10
+    ports:
+      - 9090:9090
+    volumes:
+      - $PWD:/goapp
+    working_dir: /goapp
+    command: sh -c "apk add git mysql-client && go get github.com/go-sql-driver/mysql && go get golang.org/x/xerrors && go build -o ./bin/vulnapp && ./bin/vulnapp -p 9090"
+    depends_on:
+      - mysql
+    container_name: vulnapp-goapp
+
+  csrftrap:
+    image: golang:1.13-alpine3.10
+    ports:
+      - 3030:3030
+    volumes:
+      - $PWD/Trap/localTrap:/trapapp
+    working_dir: /trapapp
+    command: sh -c "apk add git && go get github.com/go-sql-driver/mysql && go get golang.org/x/xerrors && go build -o ./bin/csrftrap && ./bin/csrftrap"
+    container_name: vulnapp-csrftrap
+
