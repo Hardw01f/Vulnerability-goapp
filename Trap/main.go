@@ -3,6 +3,7 @@ package main
 import (
 	"html/template"
 	"log"
+    "fmt"
 	"net/http"
 )
 
@@ -34,4 +35,5 @@ func main() {
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
-}
+    fmt.Println("ListenPost : 3030")
+    }
