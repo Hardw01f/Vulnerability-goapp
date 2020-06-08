@@ -67,9 +67,9 @@ func CheckSessionID(r *http.Request) bool {
 		return false
 	}
 
-    if sessionID.Value == "" || userID.Value == "" {
-        return false
-    }
+	if sessionID.Value == "" || userID.Value == "" {
+		return false
+	}
 
 	uid, err := strconv.Atoi(userID.Value)
 	if err != nil {
@@ -84,11 +84,11 @@ func CheckSessionID(r *http.Request) bool {
 
 }
 
-func GetCookieValue(r *http.Request) (SessionID string, UserName string, UserID int, err error){
-    sessionID, err := r.Cookie("SessionID")
+func GetCookieValue(r *http.Request) (SessionID string, UserName string, UserID int, err error) {
+	sessionID, err := r.Cookie("SessionID")
 	if err != nil {
 		fmt.Println(err)
-        return "","",0,err
+		return "", "", 0, err
 	}
 
 	userID, err := r.Cookie("UserID")
@@ -98,18 +98,17 @@ func GetCookieValue(r *http.Request) (SessionID string, UserName string, UserID 
 	uid, err := strconv.Atoi(userID.Value)
 	if err != nil {
 		fmt.Println(err)
-        return "","",0,err
+		return "", "", 0, err
 	}
 
-    userName, err := r.Cookie("UserName")
-    if err != nil {
-        fmt.Println(err)
-        return "","",0,err
-    }
+	userName, err := r.Cookie("UserName")
+	if err != nil {
+		fmt.Println(err)
+		return "", "", 0, err
+	}
 
-    return sessionID.Value, userName.Value, uid, nil
+	return sessionID.Value, userName.Value, uid, nil
 }
-
 
 func CheckCookieOnlyLogin(r *http.Request) (userNameCookie string, sessionIDCookie string, err error) {
 	userName, err := r.Cookie("UserName")

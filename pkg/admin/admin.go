@@ -3,7 +3,6 @@ package admin
 import (
 	"database/sql"
 	"fmt"
-	"golang.org/x/xerrors"
 	"html/template"
 	"log"
 	"math/rand"
@@ -12,7 +11,9 @@ import (
 	"strings"
 	"time"
 
-	"../cookie"
+	"golang.org/x/xerrors"
+
+	"github.com/hardw01f/Vulnerability-goapp/pkg/cookie"
 )
 
 type Lists struct {

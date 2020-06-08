@@ -1,0 +1,6 @@
+github.com/go-sql-driver/mysql v1.5.0 h1:ozyZYNQW3x3HtqT1jira07DN2PArx2v7/mN66gGcHOs=
+github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
+github.com/hardw01f/vulnerability-goapp v0.0.0-20200608095627-9a1291f40edf h1:4jlqfqANv8ThioC+h0Fxz75tm+zl3Alaav7GQ/Er2eQ=
+github.com/hardw01f/vulnerability-goapp v0.0.0-20200608095627-9a1291f40edf/go.mod h1:j334qfhZGFHs1bymGREtSfXoiOXwK/wt9i5PYVbDTTI=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=

@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"os"
 
-	"../cookie"
-	"../user"
+	"github.com/hardw01f/Vulnerability-goapp/pkg/cookie"
+	"github.com/hardw01f/Vulnerability-goapp/pkg/user"
 )
 
 type User struct {
@@ -42,7 +42,7 @@ func ShowImageChangePage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func UpdateDatabase(r *http.Request, imageName string)error{
+func UpdateDatabase(r *http.Request, imageName string) error {
 	_, _, uid, err := cookie.GetCookieValue(r)
 	if err != nil {
 		fmt.Printf("%+v\n", err)
@@ -57,7 +57,7 @@ func UpdateDatabase(r *http.Request, imageName string)error{
 	defer db.Close()
 
 	_, err = db.Exec("update vulnapp.userdetails set userimage = ? where uid = ?", imageName, uid)
-    if err != nil {
+	if err != nil {
 		fmt.Printf("%+v\n", err)
 		return err
 	}
@@ -89,7 +89,7 @@ func UploadImage(w http.ResponseWriter, r *http.Request) {
 			io.Copy(f, file)
 			UpdateDatabase(r, handler.Filename)
 
-            http.Redirect(w, r, "/profile", 301)
+			http.Redirect(w, r, "/profile", 301)
 		}
 	} else {
 		http.NotFound(w, nil)
