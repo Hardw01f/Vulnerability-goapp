@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"text/template"
 
-	"../cookie"
+	"github.com/hardw01f/Vulnerability-goapp/pkg/cookie"
 )
 
 type User struct {

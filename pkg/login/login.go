@@ -1,13 +1,14 @@
 package login
 
 import (
-	"../cookie"
 	"database/sql"
 	"encoding/base64"
 	"fmt"
 	"log"
 	"net/http"
 	"text/template"
+
+	"github.com/hardw01f/Vulnerability-goapp/pkg/cookie"
 )
 
 type Person struct {
