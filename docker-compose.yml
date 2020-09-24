@@ -12,7 +12,7 @@ services:
       - 3306:3306
     volumes:
       - ./runenv/mysql:/etc/mysql
-      - ./runenv/mysql-data/init.sql:/docker-entrypoint-initdb.d/grant.sql
+      - ./runenv/mysql-data/init.sql:/docker-entrypoint-initdb.d/grant.sql:ro
     container_name: vulnapp-mysql
 
   goapp:
@@ -22,7 +22,7 @@ services:
     volumes:
       - $PWD:/goapp
     working_dir: /goapp
-    command: sh -c "apk add git mysql-client && go get github.com/go-sql-driver/mysql && go get golang.org/x/xerrors && go build -o vulnapp && ./vulnapp -p 9090"
+    command: sh -c "apk add git mysql-client && go build -o vulnapp && ./vulnapp -p 9090"
     depends_on:
       - mysql
     container_name: vulnapp-goapp
@@ -34,6 +34,6 @@ services:
     volumes:
       - $PWD:/goapp
     working_dir: /goapp/Trap
-    command: sh -c "apk add git && go get github.com/go-sql-driver/mysql && go get golang.org/x/xerrors && go build -o trapapp && ./trapapp"
+    command: sh -c "apk add git && go build -o trapapp && ./trapapp"
     container_name: vulnapp-csrftrap
 
